@@ -5,7 +5,7 @@ import clamp from './utils/clamp';
 import './App.css';
 
 const DP = 4;
-const CIRCLE_SIZE = 400;
+const CIRCLE_SIZE = 500;
 const CIRCLE_RADIUS = CIRCLE_SIZE / 2;
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
   const [sin, setSin] = useState(0.5);
   const [isMovingCos, setIsMovingCos] = useState(false);
   const [isMovingSin, setIsMovingSin] = useState(false);
-  const [angle, setAngle] = useState(Math.PI / 4); // in radians
+  const [angle, setAngle] = useState(approximate(Math.PI / 4, DP)); // in radians
   const [isMovingAngle, setIsMovingAngle] = useState(false);
 
   const circleRef = useRef();
