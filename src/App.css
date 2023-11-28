@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background: #000;
+  position: relative;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 50% 50%;
+  transform: translateX(-50%) translateY(-50%);
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  border: #222 solid 1px;
+}
+
+.circle::before,
+.circle::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  background-color: #222;
+}
+
+.circle::before {
+  height: 1px;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.circle::after {
+  height: 100%;
+  width: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.angle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #0277bd;
+}
+
+.angle-line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 0 50%;
+  height: 2px;
+  width: 50%;
+  border-radius: 3px;
+}
+
+.angle-line:hover {
+  border-width: 3px 0 3px 0;
+  border-color: #737300;
+  border-style: solid;
+}
+
+.angle-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.angle-indicator path {
+  stroke: #0277bd;
+  stroke-width: 2;
+}
+
+.cos-label,
+.sin-label {
+  position: absolute;
+  display: inline-block;
+  padding: 0 10px 0 10px;
+  text-wrap: nowrap;
+  color: #aaa;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.cos-label {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sin-label {
+  transform: translateY(50%);
+}
+
+.label-text {
+  color: #444;
+}
+
+.cos-line,
+.sin-line {
+  position: absolute;
+  border: dashed #555;
+  pointer-events: none;
+}
+
+.cos-line {
+  transform: translateX(calc(-100% - 1px));
+  width: 0px;
+  border-width: 0 0 0 1px;
+}
+
+.sin-line {
+  transform: translateY(calc(100% + 1px));
+  height: 0px;
+  border-width: 1px 0 0 0;
+}
