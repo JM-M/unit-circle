@@ -36,9 +36,9 @@ function App() {
     let sin = y / CIRCLE_RADIUS - 1;
     sin = approximate(sin, DP);
     setSin(sin);
-    let angle = approximate(Math.asin(sin), DP);
+    let angle = Math.asin(sin);
     if (angle < 0) angle = 2 * Math.PI + angle;
-    setAngle(angle);
+    setAngle(approximate(angle, DP));
   };
 
   const updateAngle = ({ x, y }) => {
